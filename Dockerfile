@@ -1,9 +1,16 @@
 FROM php:8.2-apache
 
-# Instala extensiones necesarias
-RUN docker-php-ext-install pdo pdo_mysql
+# Instala las dependencias de sistema para PostgreSQL (libpq-dev)
+# y luego instala la extensión de PHP (pdo_pgsql)
+RUN apt-get update \
+    && apt-get install -y libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copia los archivos del proyecto
+# Copia todo desde la raíz del repo ('.') al servidor web
 COPY . /var/www/html/
 
-EXPOSE 80
+# Le dice a Apache que busque "listado.php" como archivo principal
+RUN echo "DirectoryIndex listado.php" > /var/www/html/.htaccess
+
+EXPOSE 80
