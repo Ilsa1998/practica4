@@ -45,7 +45,7 @@ if (isset($_POST['cod'])) {
             <textarea class="formulario" id="descripcion" name="descripcion" required><?= htmlspecialchars($producto['descripcion']) ?></textarea><br>
 
             <label for="PVP">PVP:</label>
-            <input class="formulario" type="text" id="PVP" name="PVP" value="<?= htmlspecialchars($producto['PVP']) ?>" required><br>
+            <input class="formulario" type="text" id="PVP" name="PVP" value="<?= htmlspecialchars($producto['pvp']) ?>" required><br>
 
             <button class="actualizar" type="submit" name="accion" value="actualizar">Actualizar</button>
             <button class="cancelar" type="submit" name="accion" value="cancelar">Cancelar</button>
