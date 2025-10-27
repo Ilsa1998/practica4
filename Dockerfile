@@ -13,4 +13,4 @@ COPY . /var/www/html/
 # Le dice a Apache que busque "listado.php" como archivo principal
 RUN echo "DirectoryIndex listado.php" > /var/www/html/.htaccess
 
-EXPOSE 80
+EXPOSE 80
