@@ -87,7 +87,7 @@
                 
                 <div class="producto-fila">
                     <span class="producto-info">
-                        <?= htmlspecialchars($producto['nombre_corto']) ?> - <?= htmlspecialchars($producto['PVP']) ?>€
+                        <?= htmlspecialchars($producto['nombre_corto']) ?> - <?= htmlspecialchars($producto['pvp']) ?>€
                     </span>
                     
                     <div class="botones-acciones" style="padding: 4px 16px ">
